@@ -1,0 +1,22 @@
+{
+  "dataset_info": {
+    "total_rows": 35415,
+    "total_features": 55,
+    "target_column": "pedidos",
+    "date_range": "2016-09-12 to 2018-08-27",
+    "unique_sellers": 2970,
+    "avg_weeks_per_seller": 11.9
+  },
+  "feature_categories": {
+    "temporal_features": 16,
+    "business_features": 6,
+    "static_features": 4,
+    "cyclical_features": 3,
+    "interaction_features": 3
+  },
+  "data_split": {
+    "train_size": 30802,
+    "test_size": 4613,
+    "split_date": "2018-07-09"
+  }
+}
