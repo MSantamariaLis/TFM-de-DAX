@@ -56,21 +56,21 @@ class InferencePreprocessing:
 
         """ Applies a predefined sequence of preprocessing steps to the target DataFrame for inference. """
         
-        preprocessing_steps = ['sort_values', 'drop_duplicates', 'datetime', 'white_noise_filter', 'missing_dates', 'missing_data','scaler', 'difference']
+        preprocessing_steps = ['sort_values', 'drop_duplicates', 'datetime', 'white_noise_filter', 'missing_dates', 'missing_data','minimum_length','scaler', 'difference']
         return self.__preprocess(df_predict, preprocessing_steps)
     
     def preprocessing_past_covariates(self, df_past_covariates:pd.DataFrame):
 
         """ Applies a predefined sequence of preprocessing steps to the past covariates DataFrame for inference. """
 
-        preprocessing_steps = ['sort_values', 'drop_duplicates', 'datetime', 'white_noise_filter','missing_dates', 'missing_data','scaler', 'difference', 'static_features']
+        preprocessing_steps = ['sort_values', 'drop_duplicates', 'datetime', 'white_noise_filter','missing_dates', 'missing_data','minimum_length','scaler', 'difference', 'static_features']
         return self.__preprocess(df_past_covariates, preprocessing_steps, is_covariate=True)
     
     def inference_preprocessing_future_covariates(self, df_future_covariates:pd.DataFrame):
 
         """ Applies a predefined sequence of preprocessing steps to the future covariates DataFrame for inference. """
         
-        preprocessing_steps = ['sort_values', 'drop_duplicates', 'datetime', 'white_noise_filter', 'missing_dates','missing_data','scaler', 'difference', 'static_features']
+        preprocessing_steps = ['sort_values', 'drop_duplicates', 'datetime', 'white_noise_filter', 'missing_dates','missing_data','minimum_length','scaler', 'difference', 'static_features']
         return self.__preprocess(df_future_covariates, preprocessing_steps, is_covariate=True)
     
     def inference_preprocessing(self, df_predict:pd.DataFrame = None, df_past_covariates:pd.DataFrame = None, df_future_covariates:pd.DataFrame = None):
